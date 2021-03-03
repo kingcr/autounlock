@@ -5,3 +5,5 @@ Add the following files here:
 
 3. Encrypted filesystem keyfiles, named .fsk-<filesystem>
 4. SSH client keys, named .ssh-key-<slot#>
+
+Remember to edit /etc/initramfs-tools/hooks/autounlock and add files to the copy list
