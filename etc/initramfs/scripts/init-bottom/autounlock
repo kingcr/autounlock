@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if PID="$(cat /run/.autounlock-pid)" 2>/dev/null && [ "$(readlink -f "/proc/$PID/cmdline")" = "/bin/sh /sbin/zfs-autounlock" ]; then
+    echo "Stopping ZFS autounlock background process ($PID)"
+    kill -TERM $(ps l | awk '$4~/^'$PID'$/ {print $3}') $PID
+fi
