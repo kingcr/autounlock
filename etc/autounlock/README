@@ -1,0 +1,7 @@
+Add the following files here:
+
+1. Static dropbearmulti
+2. Static openssl
+
+3. Encrypted filesystem keyfiles, named .fsk-<filesystem>
+4. SSH client keys, named .ssh-key-<slot#>
