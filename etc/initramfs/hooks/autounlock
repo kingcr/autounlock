@@ -1,0 +1,25 @@
+#!/bin/sh
+
+PREREQ=""
+
+prereqs()
+{
+        echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+        prereqs
+        exit 0
+        ;;
+esac
+
+. /usr/share/initramfs-tools/hook-functions
+
+copy_exec /etc/autounlock/zfs-autounlock /sbin
+copy_exec /etc/autounlock/dropbearmulti /sbin
+copy_exec /etc/autounlock/openssl /sbin
+
+copy_file key /etc/autounlock/.fs-key-rpool /
+copy_file key /etc/autounlock/.ssh-key-1 /
